@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button.tsx";
 import React from "react";
 import { clsx } from "clsx";
 
+import { SunIcon, MoonIcon, XIcon } from "lucide-react";
+
 function App() {
 	function getColorPreference(): "light" | "dark" {
 		if (matchMedia("(prefers-color-scheme: light)").matches) {
@@ -34,13 +36,27 @@ function App() {
 				)}
 			>
 				<div className="absolute top-0 left-0 w-[100%] h-[100%] bg-slate-100/95 dark:bg-slate-950/95 text-slate-900 dark:text-slate-100 p-4 backdrop-blur overflow-auto">
-					<h1 className="font-bold">Deex</h1>
+					<div className="flex flex-row items-center justify-between">
+						<h1 className="font-bold text-xl">Deex</h1>
 
-					<Button onClick={() => toggleLightMode(!isLightMode)}>
-						Toggle Theme
-					</Button>
+						<div className="">
+							<Button
+								variant="ghost"
+								size="icon"
+								onClick={() => toggleLightMode(!isLightMode)}
+							>
+								{isLightMode ? <SunIcon /> : <MoonIcon />}
+							</Button>
 
-					<Button onClick={() => toggleOpen(false)}>Close Deex</Button>
+							<Button
+								variant="ghost"
+								size="icon"
+								onClick={() => toggleOpen(false)}
+							>
+								<XIcon />
+							</Button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>
