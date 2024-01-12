@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
-dist2
+dist-styles
 dist-ssr
 *.local
 
