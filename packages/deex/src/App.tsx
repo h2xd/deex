@@ -16,8 +16,8 @@ function App() {
   
   return (
     <>
-      <div className={clsx({ container: true, light: isLightMode, dark: !isLightMode})}>
-        <h1>Deex</h1>
+      <div className={clsx('fixed bottom-0 right-0 w-[50%] h-[100%] bg-white shadow-lg p-4', { container: true, light: isLightMode, dark: !isLightMode})}>
+        <h1 className="font-bold">Deex</h1>
 
         <Button onClick={() => toggleLightMode(!isLightMode)}>
           Hello
