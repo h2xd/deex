@@ -10,13 +10,14 @@ export function createDeex() {
 	const shadowRoot = host.attachShadow({ mode: "open" });
 
 	const root = document.createElement("div");
-	root.className = "bg-white-100 dark:bg-black-900";
+	root.className = "deex-container";
 
 	const appStyleElement = document.createElement("style");
 	appStyleElement.innerHTML = appStyle.default;
 
 	shadowRoot.appendChild(appStyleElement);
 	shadowRoot.appendChild(root);
+
 	window.document.body.appendChild(host);
 
 	ReactDOM.createRoot(root).render(
